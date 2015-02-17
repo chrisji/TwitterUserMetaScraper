@@ -34,5 +34,7 @@ for user_id in user_ids:
                 f.write(user_id + ', N/A, N/A\n')
         else:
             f.write(user_id + ', HTTP-CODE:' + str(r.status_code) + ', ' + 'HTTP-CODE:' + str(r.status_code) + '\n')
+    number_processed += 1
+    print datetime.datetime.now(), user_id, 'processed.', number_processed, 'of', num_of_users
     time.sleep(time_between_requests)
 print 'Scraping finished:', datetime.datetime.now()
