@@ -1,7 +1,7 @@
 # TwitterUserMetaScraper
 - Twitter scraper to obtain public user meta-data.
 - Currently collects full name and screen name.
-- Note: official API may be a more efficient option (around 1500 users per 15 minutes).
+- Note: official API for bulk lookup is probably a much more efficient option!
 
 ## Usage
 1. Install Beautiful Soup: `pip install beautifulsoup4`.
