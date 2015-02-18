@@ -18,6 +18,12 @@ with open('input/user_id_list.txt', 'r') as f:
         if user_id != '':
             user_ids.append(user_id)
 
+# Keep track of number processed
+number_processed = 0
+
+# Store number of users to process
+num_of_users = len(user_ids)
+
 print 'Starting scraper:', datetime.datetime.now()
 for user_id in user_ids:
     r = requests.get('https://twitter.com/intent/user?user_id=' + user_id)
