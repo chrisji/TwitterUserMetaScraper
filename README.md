@@ -1,7 +1,19 @@
 # TwitterUserMetaScraper
-- Twitter scraper to obtain public user meta-data.
-- Currently collects full name and screen name.
-- Note: official API for bulk lookup is probably a much more efficient option!
+- Twitter scraper to obtain public user meta-data using "https://twitter.com/intent/user?user_id=" endpoint.
+- Note: official API for bulk lookup is (probably) a much more efficient option!
+
+## What does it scrape?
+- [X] Screen name
+- [X] Full name
+- [X] Follower count
+- [X] Friend (following) count
+- [X] Description field 
+- [ ] Location field
+- [ ] External link
+- [ ] Verified account status
+- [ ] Most recent tweets sample
+- [ ] 5 follower sample
+- [ ] 5 friend (following) sample
 
 ## Usage
 1. Install Beautiful Soup: `pip install beautifulsoup4`.
@@ -9,5 +21,18 @@
 3. Run scrape.py
 
 ## Output
-- A file containing a list of user data in the form: `user_id, screen_name, full_name`
-- See the example output file for more info.
+- A file containing a list of user attributes represented in json
+- See the output directory for more details
+
+###Example entry for a user:
+```json
+{
+  "id": "783214", 
+  "full_name": "Twitter", 
+  "screen_name": "@twitter",
+  "description": "Your official source for news, updates and tips from Twitter, Inc.", 
+  "friend_count": 102, 
+  "follower_count": 37002665, 
+  "http_status_code": 200
+}
+```
