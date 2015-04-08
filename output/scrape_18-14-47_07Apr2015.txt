@@ -1,4 +1,0 @@
-{"screen_name": "@katyperry", "id": "21447363", "full_name": "KATY PERRY", "http_status_code": 200}
-{"screen_name": "@ArianaGrande", "id": "34507480", "full_name": "Ariana Grande", "http_status_code": 200}
-{"screen_name": "@taylorswift13", "id": "17919972", "full_name": "Taylor Swift", "http_status_code": 200}
-{"screen_name": "@justinbieber", "id": "27260086", "full_name": "Justin Bieber", "http_status_code": 200}

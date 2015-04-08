@@ -43,6 +43,9 @@ class TwitterMetaScraper():
         if req.status_code == 200:
             attribute_dict["screen_name"] = TwitterMetaScraper.extract_screen_name(req)
             attribute_dict["full_name"] = TwitterMetaScraper.extract_full_name(req)
+            attribute_dict["description"] = TwitterMetaScraper.extract_description(req)
+            attribute_dict["follower_count"] = TwitterMetaScraper.extract_follower_count(req)
+            attribute_dict["friend_count"] = TwitterMetaScraper.extract_friend_count(req)
 
         # Write extracted attributes to file.
         with open(self.output_path, 'a') as f:
@@ -75,6 +78,19 @@ class TwitterMetaScraper():
         else:
             return None
 
+    @staticmethod
+    def extract_description(req):
+        return BeautifulSoup(req.content).find('p', attrs={'class': 'note'}).getText()
+
+    @staticmethod
+    def extract_follower_count(req):
+        followers_dd = BeautifulSoup(req.content).find_all('dd', attrs={'class': 'count'})[0]
+        return int(followers_dd.a.getText().replace(',', ''))
+
+    @staticmethod
+    def extract_friend_count(req):
+        friends_dd = BeautifulSoup(req.content).find_all('dd', attrs={'class': 'count'})[1]
+        return int(friends_dd.a.getText().replace(',', ''))
 
 if __name__ == "__main__":
     scraper = TwitterMetaScraper(input_filename="ids.txt")
