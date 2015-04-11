@@ -19,8 +19,8 @@ class TwitterMetaScraper():
         self.user_ids = self.load_users()  # Load in user ids to process.
 
     def run(self):
-        number_processed = 0  # Keep track of number processed
-        num_of_users = len(self.user_ids)  # Store number of users to process
+        number_processed = 0  # Keep track of the number of scraped users
+        num_of_users = len(self.user_ids)  # Store the number of users to scrape
 
         print 'Starting scraper:', datetime.now()
         for user_id in self.user_ids:
