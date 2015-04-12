@@ -10,7 +10,7 @@
 - [X] Description field 
 - [ ] Location field
 - [ ] External link
-- [ ] Verified account status
+- [X] Verified account status
 - [ ] Most recent tweets sample
 - [ ] 5 follower sample
 - [ ] 5 friend (following) sample
