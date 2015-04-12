@@ -46,6 +46,7 @@ class TwitterMetaScraper():
             attribute_dict["description"] = TwitterMetaScraper.extract_description(req)
             attribute_dict["follower_count"] = TwitterMetaScraper.extract_follower_count(req)
             attribute_dict["friend_count"] = TwitterMetaScraper.extract_friend_count(req)
+            attribute_dict["verified"] = TwitterMetaScraper.extract_verified_badge(req)
 
         # Write extracted attributes to file.
         with open(self.output_path, 'a') as f:
@@ -91,6 +92,14 @@ class TwitterMetaScraper():
     def extract_friend_count(req):
         friends_dd = BeautifulSoup(req.content).find_all('dd', attrs={'class': 'count'})[1]
         return int(friends_dd.a.getText().replace(',', ''))
+
+    @staticmethod
+    def extract_verified_badge(req):
+        verified = BeautifulSoup(req.content).find('li', attrs={'class': 'verified'})
+        if verified is None:
+            return False
+        return True
+
 
 if __name__ == "__main__":
     scraper = TwitterMetaScraper(input_filename="ids.txt")
