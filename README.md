@@ -29,7 +29,7 @@
 {
   "id": "783214", 
   "full_name": "Twitter", 
-  "screen_name": "@twitter",
+  "screen_name": "twitter",
   "description": "Your official source for news, updates and tips from Twitter, Inc.", 
   "friend_count": 102, 
   "follower_count": 37002665, 
