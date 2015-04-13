@@ -12,8 +12,8 @@
 - [ ] External link
 - [X] Verified account status
 - [ ] Most recent tweets sample
-- [ ] 5 follower sample
-- [ ] 5 friend (following) sample
+- [X] 5 follower sample
+- [X] 5 friend (following) sample
 
 ## Usage
 1. Install Beautiful Soup: `pip install beautifulsoup4`.
