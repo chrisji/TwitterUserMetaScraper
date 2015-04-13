@@ -34,6 +34,8 @@
   "friend_count": 102, 
   "follower_count": 37002665, 
   "verified": true,
+  "friend_sample": ["kellyshalk", "MagicRecs", "TwitterData", "TwitterFashion", "TwitterMovies"],
+  "follower_sample": ["preciousmeh", "zai00", "azzaul", "PanCarlos", "tafr"],
   "http_status_code": 200
 }
 ```
