@@ -47,6 +47,8 @@ class TwitterMetaScraper():
             attribute_dict["follower_count"] = TwitterMetaScraper.extract_follower_count(req)
             attribute_dict["friend_count"] = TwitterMetaScraper.extract_friend_count(req)
             attribute_dict["verified"] = TwitterMetaScraper.extract_verified_badge(req)
+            attribute_dict["follower_sample"] = TwitterMetaScraper.extract_follower_sample(req)
+            attribute_dict["friend_sample"] = TwitterMetaScraper.extract_friend_sample(req)
 
         # Write extracted attributes to file.
         with open(self.output_path, 'a') as f:
@@ -99,6 +101,31 @@ class TwitterMetaScraper():
         if verified is None:
             return False
         return True
+
+    @staticmethod
+    def extract_follower_sample(req):
+        # Get the followers 'facepile' element.
+        follower_facepile = BeautifulSoup(req.content).find_all('ul', attrs={'class': 'facepile'})[0]
+
+        # Get all the 'vcard elements' for the followers
+        follower_vcards = follower_facepile.find_all('li', attrs={'class': 'vcard'})
+
+        # Get follower screen names from alt attribute in the img tag of each vcard.
+        followers = [vcard.a.img['alt'] for vcard in follower_vcards]
+        return followers
+
+    @staticmethod
+    def extract_friend_sample(req):
+        # Get the friends 'facepile' element.
+        friend_facepile = BeautifulSoup(req.content).find_all('ul', attrs={'class': 'facepile'})[1]
+
+        # Get all the 'vcard elements' for the friends
+        friend_vcards = friend_facepile.find_all('li', attrs={'class': 'vcard'})
+
+        # Get friend screen names from alt attribute in the img tag of each vcard.
+        friends = [vcard.a.img['alt'] for vcard in friend_vcards]
+        print friends
+        return friends
 
 
 if __name__ == "__main__":
