@@ -64,7 +64,7 @@ class TwitterMetaScraper():
     @staticmethod
     def extract_screen_name(req):
         data = BeautifulSoup(req.content).find('title').string
-        screen_match = re.search('\((@.*)\)', data)
+        screen_match = re.search('\(@(.*)\)', data)
         if screen_match:
             return screen_match.group(1).encode('utf-8')
         else:
