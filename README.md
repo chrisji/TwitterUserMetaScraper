@@ -16,15 +16,15 @@
 - [X] 5 friend (following) sample
 
 ## Usage
-1. Install Beautiful Soup: `pip install beautifulsoup4`.
-2. Add user ids to `input/user_id_list.txt`, one per line.
-3. Run scrape.py
+1. Install Beautiful Soup: `pip install beautifulsoup4`
+2. Add user ids to `input/ids.txt`, one per line
+3. Run scrape.py (or use the `TwitterMetaScraper` class as you wish!)
 
 ## Output
-- A file containing a list of user attributes represented in json
+- A file containing a list of user attributes represented in JSON
 - See the output directory for more details
 
-###Example entry for a user:
+### Example entry for a user:
 ```json
 {
   "id": "783214", 
