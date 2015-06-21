@@ -8,7 +8,7 @@ import os
 
 
 class TwitterMetaScraper():
-    def __init__(self, time_between_reqs=0, output_dir='output', input_dir='input', input_filename='id_list.txt'):
+    def __init__(self, time_between_reqs=0, output_dir='output', input_dir='input', input_filename='ids.txt'):
         self.time_between_reqs = time_between_reqs  # Number of seconds between user requests.
 
         # Paths for I/O
